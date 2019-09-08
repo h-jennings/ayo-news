@@ -1,6 +1,5 @@
 .DS_Store
 DS_Store
-functions
 .env
 node_modules
 .cache
