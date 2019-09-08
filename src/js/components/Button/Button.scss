@@ -1,0 +1,83 @@
+@import '../../../scss/mixins';
+
+.arrow-btn--wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: var(--c-07);
+}
+
+.arrow-btn--container {
+  display: flex;
+  align-items: center;
+  font-size: var(--txt-xsm);
+  color: var(--black);
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--yellow);
+  }
+
+  &:hover {
+    .arrow-btn {
+      transform: scale(1.2);
+      border-color: var(--yellow);
+
+      path {
+        fill: var(--yellow);
+      }
+
+      .arrow-1 {
+        transform: translateX(100%);
+      }
+
+      .arrow-2 {
+        transform: translateX(0%);
+      }
+    }
+  }
+}
+
+.arrow-btn {
+  width: 35px;
+  height: 35px;
+  display: block;
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+  background-color: var(--white);
+  border: 3px solid var(--black);
+  border-radius: 50%;
+  margin-left: var(--c-03);
+
+  path {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .arrow {
+
+    &-1,
+    &-2 {
+      overflow: hidden;
+    }
+  }
+
+  .arrow-1 {
+    transform: translateX(0%);
+  }
+
+  .arrow-2 {
+    transform: translateX(-100%);
+  }
+}
+
+@include for-phone-only {
+  .arrow-btn--container {
+    font-size: var(--txt-xxsm);
+  }
+
+  .arrow-btn {
+    width: 25px;
+    height: 25px;
+    border-width: 2px;
+  }
+}

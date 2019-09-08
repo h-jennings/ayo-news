@@ -1,0 +1,31 @@
+@import '../../../scss/mixins';
+
+:root {
+  --header-height: 106px;
+
+  @include main-grid-break {
+    --header-height: 79px;
+  }
+}
+
+.top-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: var(--white);
+  width: 100%;
+  z-index: 999;
+}
+
+.PageTitle--container {
+  padding: 0 0 0 var(--c-06);
+  color: var(--black);
+  font-size: var(--txt-md);
+
+  @include main-grid-break {
+    padding: 0 0 0 var(--c-04);
+    font-size: var(--txt-sm);
+  }
+}

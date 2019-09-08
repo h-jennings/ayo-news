@@ -1,0 +1,58 @@
+{
+  "name": "news-app",
+  "version": "1.0.0",
+  "description": "Simple News App using the News API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run serve\" \"webpack-dev-server\"",
+    "serve": "netlify-lambda serve functions --config ./webpack.functions.js",
+    "dev-mobile": "webpack-dev-server --host 0.0.0.0",
+    "build": "webpack --mode=production --progress --hide-modules && npm run lambda-build",
+    "lambda-build": "netlify-lambda build functions"
+  },
+  "keywords": [
+    "news"
+  ],
+  "bugs": {
+    "name": "Hunter Jennings",
+    "email": "jenningsdhunter@gmail.com"
+  },
+  "author": "Hunter Jennings",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.2",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2",
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "terser-webpack-plugin": "^1.4.1",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "core-js": "^3.2.1",
+    "dotenv-webpack": "^1.7.0",
+    "framer-motion": "^1.5.0",
+    "netlify-lambda": "^1.6.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "regenerator-runtime": "^0.13.3"
+  }
+}

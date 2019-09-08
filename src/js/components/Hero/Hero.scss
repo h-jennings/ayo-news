@@ -1,0 +1,104 @@
+@import '../../../scss/mixins';
+
+.Hero--wrapper {
+  margin-top: var(--header-height);
+  width: 100%;
+  @include split-grid;
+
+  .col-left {
+    height: calc(100vh - var(--header-height));
+    min-height: 560px;
+    grid-column: 1 / 2;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+
+    @include for-tablet-down {
+      grid-column: 1 / -1;
+      height: calc(75vh - var(--header-height));
+      min-height: unset;
+    }
+  }
+
+  .col-right {
+    padding: 0 var(--c-07);
+    position: relative;
+    max-width: var(--main-container-size);
+    display: flex;
+    align-items: center;
+
+    @include for-tablet-down {
+      grid-column: 2 / 3;
+      padding: 0;
+    }
+
+    @include main-grid-break {
+      display: unset;
+      grid-column: 1 / -1;
+      padding: 0 var(--c-07);
+    }
+
+    @include for-phone-only {
+      padding: 0 var(--c-06);
+    }
+  }
+
+  h1 {
+    font-size: var(--txt-sm);
+    margin-bottom: var(--c-03);
+
+    @include for-laptop-up {
+      font-size: var(--txt-md);
+    }
+
+    @include for-tablet-down {
+      margin-top: calc(30px + var(--c-07));
+    }
+
+    @include for-phone-only {
+      font-size: var(--txt-base);
+      margin-top: calc(22px + var(--c-07));
+    }
+  }
+
+  p {
+    margin-bottom: var(--c-07);
+  }
+
+  .section-header {
+    font-size: var(--txt-lg);
+    font-weight: 700;
+    font-family: var(--secondary-font);
+    margin-bottom: var(--c-07);
+
+    @include for-laptop-up {
+      font-size: var(--txt-xl);
+    }
+
+    @include for-tablet-down {
+      position: absolute;
+      top: -29px;
+      left: calc(53px * -1);
+    }
+
+    @include main-grid-break {
+      left: var(--c-07);
+    }
+
+    @include for-phone-only {
+      font-size: var(--txt-md);
+      top: -23px;
+      background-color: var(--white);
+    }
+  }
+
+  .highlight {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, var(--yellow) 50%);
+    padding: var(--c-02);
+
+    @include for-tablet-down {
+      background: linear-gradient(180deg, var(--yellow) 50%, rgba(255, 255, 255, 0) 50%);
+    }
+
+  }
+}

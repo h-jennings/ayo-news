@@ -1,0 +1,11 @@
+:root {
+  --main-container-size: 640px;
+
+  @include for-laptop-up {
+    --main-container-size: 728px;
+  }
+}
+
+html {
+  background-color: var(--white);
+}

@@ -1,0 +1,34 @@
+@import '../../../scss/mixins';
+
+.Footer--wrapper {
+  background-color: var(--yellow);
+  color: var(--black);
+  display: flex;
+  width: 100%;
+  min-height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--c-05) var(--c-06);
+
+  .col-left {
+    align-self: flex-end;
+    font-size: var(--txt-xsm);
+  }
+
+  img {
+    width: 95px;
+
+    @include for-phone-only {
+      width: 75px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    color: var(--black);
+    font-style: italic;
+    font-size: var(--txt-xxsm);
+    margin-top: var(--c-01);
+  }
+}

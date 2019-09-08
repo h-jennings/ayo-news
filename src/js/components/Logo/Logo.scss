@@ -1,0 +1,14 @@
+@import '../../../scss/mixins';
+
+.Logo--container {
+  width: 200px;
+  justify-self: flex-start;
+
+  img {
+    display: block;
+  }
+
+  @include main-grid-break {
+    width: 150px;
+  }
+}

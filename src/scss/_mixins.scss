@@ -1,0 +1,58 @@
+// * Using these in individual components require an import statement
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin main-grid-break {
+  @media (max-width: 720px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-down {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin for-laptop-down {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin for-laptop-up {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include for-tablet-down {
+    grid-template-columns: 1fr var(--main-container-size) 1fr;
+  }
+
+  @include main-grid-break {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin main-grid {
+  display: grid;
+  grid-template-columns: 1fr var(--main-container-size) 1fr;
+
+  @include for-tablet-down {
+    grid-template-columns: 1fr var(--main-container-size) 1fr;
+
+  }
+
+  @include main-grid-break {
+    grid-template-columns: 1fr;
+  }
+}

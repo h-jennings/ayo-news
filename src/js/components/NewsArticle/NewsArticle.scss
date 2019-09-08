@@ -1,0 +1,80 @@
+@import '../../../scss/mixins';
+
+.NewsArticle--container {
+  position: relative;
+  margin-bottom: calc(48px + var(--l-05));
+
+  @include main-grid-break {
+    margin-bottom: calc(30px + var(--l-04));
+  }
+
+  @include for-phone-only {
+    margin-bottom: var(--l-02);
+    padding-bottom: var(--l-02);
+    border-bottom: 4px solid var(--yellow);
+  }
+
+  h1 {
+    font-size: var(--txt-sm);
+    margin-bottom: var(--c-03);
+
+    @include for-phone-only {
+      font-size: var(--txt-base);
+    }
+
+  }
+
+  h3 {
+    width: 72.5%;
+
+    @include for-laptop-up {
+      width: 75%;
+    }
+
+    @include for-phone-only {
+      width: 100%;
+    }
+  }
+}
+
+.newArticle-img--container {
+  max-width: 182px;
+  width: 182px;
+  height: 95px;
+  position: absolute;
+  top: -48px;
+  right: 0;
+  z-index: 2;
+  background-color: var(--black);
+  background-size: cover;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+
+  h1 {
+    position: absolute;
+    margin-bottom: var(--c-03);
+    top: 48px;
+    right: 0;
+    width: var(--main-container-size);
+    color: var(--white);
+    pointer-events: none;
+    user-select: none;
+
+    @include main-grid-break {
+      width: calc(100vw - (var(--c-07) * 2));
+    }
+  }
+
+  @include for-tablet-down {
+    top: calc(var(--c-06) * -1);
+
+    h1 {
+      top: var(--c-06);
+    }
+  }
+
+  @include for-phone-only {
+    display: none;
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../../scss/mixins';
+
+.News--container {
+  // 131px is the current size of the logo (subject to change)
+  margin-top: var(--l-06);
+  @include main-grid;
+
+  @include for-phone-only {
+    border-top: 4px solid var(--black);
+    padding-top: var(--l-04);
+    margin-top: var(--l-04);
+  }
+}
+
+
+.News-content--container {
+  grid-column: 2 / 3;
+  width: 100%;
+
+  h2 {
+    text-align: right;
+    margin-bottom: var(--l-06);
+  }
+
+  @include main-grid-break {
+    padding: 0 var(--c-07);
+
+    h2 {
+      text-align: left;
+      margin-bottom: var(--l-04);
+    }
+  }
+
+  @include for-phone-only {
+    padding: 0 var(--c-06);
+
+    h2 {
+      margin-bottom: var(--l-02);
+    }
+  }
+
+}

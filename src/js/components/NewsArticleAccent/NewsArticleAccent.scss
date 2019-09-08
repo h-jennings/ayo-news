@@ -1,0 +1,20 @@
+@import '../../../scss/mixins';
+
+.corner-accent {
+  height: 80px;
+  width: 80px;
+  top: -48px;
+  position: absolute;
+  left: -48px;
+  border-top: 10px solid var(--yellow);
+  border-left: 10px solid var(--yellow);
+
+  @include for-tablet-down {
+    top: calc(var(--c-06) * -1);
+    left: calc(var(--c-06) * -1);
+  }
+
+  @include main-grid-break {
+    display: none;
+  }
+}
