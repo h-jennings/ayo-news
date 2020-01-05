@@ -14,11 +14,9 @@ const News = () => {
 
   const getSingleStory = (articleArray) => {
     const randomArrNumber = Math.floor(Math.random() * Math.floor(6));
-    const newArr = [];
     const singleFeaturedStory = articleArray[randomArrNumber];
-    newArr.push(singleFeaturedStory);
 
-    return newArr;
+    return singleFeaturedStory;
   };
 
   useEffect(() => {
@@ -29,19 +27,25 @@ const News = () => {
         .then((articleArray) => {
           setTopStories(articleArray);
           setTopStoriesLoaded(true);
+        })
+        .catch((err) => {
+          throw new Error(err);
         });
 
       // Getting all Featured News data from Lambda Function
       fetchData('getTopNewsFn')
+        .then(featuredStoryObj => cleanArticleContent(featuredStoryObj))
         .then((articleArray) => {
           // Sending featured stories array and returning single story
           const featuredStoryObj = getSingleStory(articleArray);
           return featuredStoryObj;
         })
-        .then(featuredStoryObj => cleanArticleContent(featuredStoryObj))
         .then((featuredStoryObj) => {
           setFeaturedStory(featuredStoryObj);
           setFeaturedStoryLoaded(true);
+        })
+        .catch((err) => {
+          throw new Error(err);
         });
     };
     getStories();
@@ -53,11 +57,11 @@ const News = () => {
         ? <Loader />
         : (
           <Hero
-            hero={featuredStory[0].urlToImage}
-            headline={featuredStory[0].title}
-            subHeadline={featuredStory[0].description}
-            description={featuredStory[0].cleanedContent}
-            link={featuredStory[0].url}
+            hero={featuredStory.urlToImage}
+            headline={featuredStory.title}
+            subHeadline={featuredStory.description}
+            description={featuredStory.cleanedContent}
+            link={featuredStory.url}
             isLoaded={isFeaturedStoryLoaded}
           />
         )

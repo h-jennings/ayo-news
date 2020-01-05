@@ -20,7 +20,7 @@ const NewsArticle = (props) => {
         </a>
       </h1>
       <h3>{subHeadline}</h3>
-      <p>{description}</p>
+      <p>{description || 'No article content available.'}</p>
       <Button
         link={link}
         alignment="flex-start"
@@ -41,9 +41,13 @@ const NewsArticle = (props) => {
 NewsArticle.propTypes = {
   headline: PropTypes.string.isRequired,
   subHeadline: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   image: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
+};
+
+NewsArticle.defaultProps = {
+  description: 'No article content available.',
 };
 
 export default NewsArticle;

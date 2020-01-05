@@ -7,7 +7,7 @@
     "dev": "concurrently \"npm run serve\" \"webpack-dev-server\"",
     "serve": "netlify-lambda serve functions --config ./webpack.functions.js",
     "dev-mobile": "webpack-dev-server --host 0.0.0.0",
-    "build": "webpack --mode=production --progress --hide-modules && npm run lambda-build",
+    "build": "webpack --mode=production --hide-modules && npm run lambda-build",
     "lambda-build": "netlify-lambda build functions"
   },
   "keywords": [
