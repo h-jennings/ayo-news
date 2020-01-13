@@ -6,7 +6,7 @@ const APIKey = process.env.API_KEY;
 exports.handler = function getTopNewsFn(event, context, callback) {
   const getTopNewsStories = () => {
     axios({
-      url: 'https://newsapi.org/v2/top-headlines?sources=the-new-york-times',
+      url: 'https://newsapi.org/v2/top-headlines?country=us',
       headers: {
         'x-api-key': APIKey,
       },
