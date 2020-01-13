@@ -53,7 +53,7 @@ const News = () => {
 
   return (
     <React.Fragment>
-      {!isFeaturedStoryLoaded
+      {!isFeaturedStoryLoaded && featuredStory
         ? <Loader />
         : (
           <Hero
